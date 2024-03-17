@@ -9,7 +9,7 @@ import datetime
 # class ProductTemplate(models.Model):
 
 # 	_inherit = "product.template"
-# 	season = fields.Selection([('spring','Spring'),('summer','Summer'),('Autumn','Sutumn'),('winter','Winter')])
+season = fields.Selection([('spring','Spring'),('summer','Summer'),('Autumn','Sutumn'),('winter','Winter')])
 
 
 class Crop(models.Model):
