@@ -9,7 +9,7 @@ import datetime
 # class ProductTemplate(models.Model):
 
 # 	_inherit = "product.template"
-season = fields.Selection([('spring','Spring'),('summer','Summer'),('Autumn','Sutumn'),('winter','Winter')])
+#   season = fields.Selection([('spring','Spring'),('summer','Summer'),('Autumn','Sutumn'),('winter','Winter')])
 
 
 class Crop(models.Model):
@@ -27,7 +27,8 @@ class Crop(models.Model):
     start_date = fields.Date(string="Start Date", required=True)
     end_date = fields.Date(string="End Date", required=True)
     crop_ids = fields.One2many('crop.name.line', 'crop_line_id', string="Crop Name")
-    season_name = fields.Many2one('farm.crop.config', string="Season Name")
+    #season_name = fields.Many2one('farm.crop.config', string="Season Name")
+    season_name = fields.Selection([('spring','Spring'),('summer','Summer'),('Autumn','Sutumn'),('winter','Winter')])
     period_to_produce = fields.Char(string="Period To Produce", compute="_compute_months")
     amount_untaxed = fields.Float(string="Untaxed Amount", compute='_amount_all')
     amount_tax = fields.Float(string="Taxes", compute='_amount_all')
